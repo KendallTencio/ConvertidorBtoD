@@ -6,11 +6,9 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
-    int numero=2;
-    ListaEnlazada<int> y;
-
-    for(int i=0;i<y.getTam();i++)
-        std::cout << y.getPos(i)->getElemento() << std::endl;
+    Convertidor g;
+    g.decimalTobinario(2);
+    std::cout<<g.binarioToDecimal(g.getListaEnteros())<<std::endl;
 
 
     return a.exec();
