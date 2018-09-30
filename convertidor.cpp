@@ -1,5 +1,7 @@
 #include "convertidor.h"
 
+using namespace std;
+
 Convertidor::Convertidor()
 {
 
@@ -23,6 +25,24 @@ long Convertidor::binarioToDecimal(ListaEnlazada<int>* lista){
         lista->EliminarPos(0);
     }
      return numero ;
+}
+
+void Convertidor::listaFlotantesBinarios(double numeroFlotante, int nLimite){
+    ListaEnlazada<int> listaFloatBi;
+    int nPosicionesASacar = nLimite;
+    cout<<"0,"; //Imprime para estética de ver que es la parte decimal
+    while(nLimite != 0){
+        listaFloatBi.insertarFinal((int)(numeroFlotante*2));
+        cout<<(int)(numeroFlotante*2);  //Esto es para ver los que se agregan a la lista
+        numeroFlotante = numeroFlotante*2 - (int)(numeroFlotante*2);
+        nLimite--;
+    }
+    int contadorPos = 0;
+    while(nPosicionesASacar != contadorPos){
+        listaFloatBi.getPos(contadorPos);
+        cout<<listaFloatBi.getPos(contadorPos)->getElemento();
+        contadorPos--;
+    }
 }
 
 void Convertidor::generarListas()
