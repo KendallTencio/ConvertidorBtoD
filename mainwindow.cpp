@@ -19,6 +19,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnConvertir_clicked()
 {
-    QString valor=ui->Entrada->text();
+    //QString valor=ui->Entrada->text();
 
 }

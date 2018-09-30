@@ -9,9 +9,10 @@ class Convertidor
 private:
     ListaEnlazada<int> enteros;
     ListaEnlazada<int> decimales;
-    void generarListas();
-    void decimalTobinario();
 public:
+    void generarListas();
+    void listaFlotantesBinarios(double, int);
+    void decimalTobinario();
     Convertidor();
 
 };
