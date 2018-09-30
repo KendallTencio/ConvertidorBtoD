@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include "convertidor.h"
 namespace Ui {
 class MainWindow;
 }
@@ -21,6 +21,7 @@ private slots:
     void on_btnConvertir_clicked();
 
 private:
+    Convertidor conv;
     Ui::MainWindow *ui;
 };
 
