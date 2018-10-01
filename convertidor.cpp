@@ -7,16 +7,24 @@ Convertidor::Convertidor()
 
 }
 
-void Convertidor::decimalTobinario(){
-   int numero=10;
+void Convertidor::decimalTobinario(int numero){
     while(numero!=0){
         if (numero%2)
            this->enteros.insertarCabeza(1);
         else
             this->enteros.insertarCabeza(0);
         numero=numero/2;
-
     }
+}
+
+long Convertidor::binarioToDecimal(ListaEnlazada<int>* lista){
+    int exponente=0;
+    long numero=0;
+    while(lista->isVacia()){
+        numero=pow(lista->getCabeza()->getElemento()*2,exponente);
+        lista->EliminarPos(0);
+    }
+     return numero ;
 }
 
 void Convertidor::listaFlotantesBinarios(double numeroFlotante, int nLimite){
@@ -57,4 +65,10 @@ void Convertidor::generarListas()
         */
 
 
+}
+ListaEnlazada<int>* Convertidor::getListaDecimales(){
+    return &decimales;
+}
+ListaEnlazada<int>* Convertidor::getListaEnteros(){
+    return &enteros;
 }

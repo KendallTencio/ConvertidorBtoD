@@ -19,6 +19,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnConvertir_clicked()
 {
-    //QString valor=ui->Entrada->text();
+    double flotante;
+    QString valor=ui->Entrada->text();
+    flotante=valor.toDouble();
+
 
 }
