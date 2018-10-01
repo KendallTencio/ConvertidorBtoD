@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     w.show();
     Convertidor g;
     g.decimalTobinario(2);
-    std::cout<<g.binarioToDecimal(g.getListaEnteros())<<std::endl;
+    std::cout << g.binarioToDecimal(g.getListaEnteros()) << std::endl;
 
 
     return a.exec();
