@@ -24,13 +24,16 @@ void MainWindow::on_pushButton_clicked()
     QString limiteStr=ui->limite->text();
     flotante = valor.toDouble();
     limite = limiteStr.toInt();
-
     long enteros = (long)flotante;
     long double decimales = flotante - enteros;
 
     Convertidor convert;
     convert.decimalTobinario(enteros);
     convert.listaFlotantesBinarios(decimales, limite);
+
+    QString resul = QString::fromStdString(convert.getBinCompleto());
+    ui->Resultado->setPlainText(resul);
+
 
 
 }

@@ -18,6 +18,8 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_Salida_textChanged(const QString &arg1);
+
 private:
     Convertidor conv;
     Ui::MainWindow *ui;
