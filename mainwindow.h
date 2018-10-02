@@ -20,9 +20,17 @@ private slots:
 
     void on_Salida_textChanged(const QString &arg1);
 
+    void on_radioButton_clicked(bool checked);
+
+    void on_DtoB_clicked(bool checked);
+
+    void on_BtoD_clicked(bool checked);
+
 private:
     Convertidor conv;
     Ui::MainWindow *ui;
+    bool DecABi = false;
+    bool BiADec = false;
 };
 
 #endif // MAINWINDOW_H

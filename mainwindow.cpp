@@ -18,6 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    //if(DecABi){
     double flotante;
     int limite;
     QString valor=ui->Entrada->text();
@@ -33,9 +34,28 @@ void MainWindow::on_pushButton_clicked()
 
     QString resul = QString::fromStdString(convert.getBinCompleto());
     ui->Resultado->setPlainText(resul);
-
+    //}
 
 
 }
 
 
+void MainWindow::on_DtoB_clicked(bool checked)
+{
+    if(checked)
+    {
+    DecABi = true;
+    BiADec = false;
+   // ui->radioButton->
+    }
+}
+
+void MainWindow::on_BtoD_clicked(bool checked)
+{
+    if(checked)
+    {
+    DecABi = false;
+    BiADec = true;
+   // ui->
+    }
+}
