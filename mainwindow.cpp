@@ -21,6 +21,10 @@ void MainWindow::on_pushButton_clicked()
     double flotante;
     int limite;
     QString valor=ui->Entrada->text();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4897f54e7f86fea87719b084ec060ecdd5eb2bbc
     QString limiteStr=ui->limite->text();
     flotante = valor.toDouble();
     limite = limiteStr.toInt();
@@ -31,6 +35,19 @@ void MainWindow::on_pushButton_clicked()
     Convertidor convert;
     convert.decimalTobinario(enteros);
     convert.listaFlotantesBinarios(decimales, limite);
+<<<<<<< HEAD
+=======
+=======
+    flotante=valor.toDouble();
+    std::string to_string(int flotante );
+    ui->salida->clear();
+    ui->salida->setText("a");
+
+    ui->salida->update();
+
+
+>>>>>>> a09f55ee07f81d449a660b4108e04dbd2d51072a
+>>>>>>> 4897f54e7f86fea87719b084ec060ecdd5eb2bbc
 
 
 }
