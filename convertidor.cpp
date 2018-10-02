@@ -62,26 +62,18 @@ void Convertidor::listaFlotantesBinarios(double numeroFlotante, int nLimite){
     cout<<"\n"; //Provicional, solo para revisar que todo se imprima bien
 }
 
-void Convertidor::generarListas()
+std::string Convertidor::getBinCompleto()
 {
-   /*
-    bool ispunto=false;
-    int indice=0;
-    std::string caracter;
-    while(caracter!="\0"){
-        caracter=(Valores->substr(indice,indice+1));
-        if(caracter=="." ||caracter==","){
-            ispunto=true;
-            indice++;
-        }
-        if (ispunto)
-            this->enteros.insertarFinal(std::stoi(caracter));
-        else
-            this->decimales.insertarFinal(std::stoi(caracter));
-         }
-        */
+    std::string lista;
 
+    for(int i=0;i<enteros.getTam();i++)
+        lista += std::to_string(this->enteros.getPos(i)->getElemento());
+    lista+=",";
+    for(int i=0;i<decimales.getTam();i++)
+        lista += std::to_string(this->decimales.getPos(i)->getElemento());
 
+    std::cout <<lista <<endl;
+    return lista;
 }
 ListaEnlazada<int>* Convertidor::getListaDecimales(){
     return &decimales;

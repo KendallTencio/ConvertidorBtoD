@@ -13,7 +13,7 @@ private:
 
 public:
 public:
-    void generarListas();
+    std::string getBinCompleto();
     void listaFlotantesBinarios(double, int);
     void decimalTobinario();
     Convertidor();
