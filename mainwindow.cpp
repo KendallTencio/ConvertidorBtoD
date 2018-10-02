@@ -18,27 +18,26 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    //if(DecABi){
-    double flotante;
-    int limite;
-    QString valor=ui->Entrada->text();
-    QString limiteStr=ui->limite->text();
-    flotante = valor.toDouble();
-    limite = limiteStr.toInt();
-    long enteros = (long)flotante;
-    long double decimales = flotante - enteros;
+    if(this->BiADec==true){
+        double flotante;
+        int limite;
+        QString valor=ui->Entrada->text();
+        QString limiteStr=ui->limite->text();
+        flotante = valor.toDouble();
+        limite = limiteStr.toInt();
+        long enteros = (long)flotante;
+        long double decimales = flotante - enteros;
 
-    Convertidor convert;
-    convert.decimalTobinario(enteros);
-    convert.listaFlotantesBinarios(decimales, limite);
+        Convertidor convert;
+        convert.decimalTobinarioEnteros(enteros);
+        convert.decimalTobinarioDecimales(decimales, limite);
 
-    QString resul = QString::fromStdString(convert.getBinCompleto());
-    ui->Resultado->setPlainText(resul);
-    //}
+        QString resul = QString::fromStdString(convert.getBinCompleto());
+        ui->Resultado->setPlainText(resul);
+    }
 
 
 }
-
 
 void MainWindow::on_DtoB_clicked(bool checked)
 {
@@ -46,7 +45,6 @@ void MainWindow::on_DtoB_clicked(bool checked)
     {
     DecABi = true;
     BiADec = false;
-   // ui->radioButton->
     }
 }
 
@@ -56,6 +54,5 @@ void MainWindow::on_BtoD_clicked(bool checked)
     {
     DecABi = false;
     BiADec = true;
-   // ui->
     }
 }

@@ -14,11 +14,11 @@ private:
 public:
 public:
     std::string getBinCompleto();
-    void listaFlotantesBinarios(double, int);
+    void decimalTobinarioDecimales(double, int);
     void decimalTobinario();
     Convertidor();
 
-    void decimalTobinario(long);
+    void decimalTobinarioEnteros(long);
     long binarioToDecimal(ListaEnlazada<int>*);
     ListaEnlazada<int>* getListaEnteros();
     ListaEnlazada<int>* getListaDecimales();
