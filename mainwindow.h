@@ -18,8 +18,6 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-    void on_btnConvertir_clicked();
-
 private:
     Convertidor conv;
     Ui::MainWindow *ui;

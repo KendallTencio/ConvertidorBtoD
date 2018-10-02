@@ -7,14 +7,29 @@ Convertidor::Convertidor()
 
 }
 
-void Convertidor::decimalTobinario(int numero){
-    while(numero!=0){
-        if (numero%2)
-           this->enteros.insertarCabeza(1);
+void Convertidor::decimalTobinario(long numero){
+    ListaEnlazada<int> listaEnterosBi;
+    int c = 0;
+    while(numero>0){
+        if (numero%2 == 0)
+        {
+           this->enteros.insertarCabeza(0);
+           //cout<<"0";
+        }
         else
-            this->enteros.insertarCabeza(0);
+        {
+            this->enteros.insertarCabeza(1);
+            //cout<<"1";
+        }
         numero=numero/2;
+        c++;
     }
+    int explorador = 0;
+    while(c != explorador){
+        cout<<this->enteros.getPos(explorador)->getElemento();
+        explorador++;
+    }
+    cout<<",";
 }
 
 long Convertidor::binarioToDecimal(ListaEnlazada<int>* lista){
@@ -30,19 +45,21 @@ long Convertidor::binarioToDecimal(ListaEnlazada<int>* lista){
 void Convertidor::listaFlotantesBinarios(double numeroFlotante, int nLimite){
     ListaEnlazada<int> listaFloatBi;
     int nPosicionesASacar = nLimite;
-    cout<<"0,"; //Imprime para estética de ver que es la parte decimal
     while(nLimite != 0){
-        listaFloatBi.insertarFinal((int)(numeroFlotante*2));
+        this->decimales.insertarFinal((int)(numeroFlotante*2));
         cout<<(int)(numeroFlotante*2);  //Esto es para ver los que se agregan a la lista
         numeroFlotante = numeroFlotante*2 - (int)(numeroFlotante*2);
         nLimite--;
     }
+    cout<<"\n"<<endl;
+    //cout<<"0,"; //Para probar que van bien en la lista
     int contadorPos = 0;
     while(nPosicionesASacar != contadorPos){
-        listaFloatBi.getPos(contadorPos);
-        cout<<listaFloatBi.getPos(contadorPos)->getElemento();
-        contadorPos--;
+        this->decimales.getPos(contadorPos);
+        cout<<this->decimales.getPos(contadorPos)->getElemento();
+        contadorPos++;
     }
+    cout<<"\n"; //Provicional, solo para revisar que todo se imprima bien
 }
 
 void Convertidor::generarListas()

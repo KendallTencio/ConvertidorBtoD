@@ -16,12 +16,23 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_btnConvertir_clicked()
+void MainWindow::on_pushButton_clicked()
 {
     double flotante;
+    int limite;
     QString valor=ui->Entrada->text();
-    flotante=valor.toDouble();
+    QString limiteStr=ui->limite->text();
+    flotante = valor.toDouble();
+    limite = limiteStr.toInt();
+
+    long enteros = (long)flotante;
+    long double decimales = flotante - enteros;
+
+    Convertidor convert;
+    convert.decimalTobinario(enteros);
+    convert.listaFlotantesBinarios(decimales, limite);
 
 
 }
+
+

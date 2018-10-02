@@ -18,7 +18,7 @@ public:
     void decimalTobinario();
     Convertidor();
 
-    void decimalTobinario(int);
+    void decimalTobinario(long);
     long binarioToDecimal(ListaEnlazada<int>*);
     ListaEnlazada<int>* getListaEnteros();
     ListaEnlazada<int>* getListaDecimales();
