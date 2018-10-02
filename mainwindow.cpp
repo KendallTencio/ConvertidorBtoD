@@ -23,7 +23,11 @@ void MainWindow::on_btnConvertir_clicked()
     QString valor=ui->Entrada->text();
     flotante=valor.toDouble();
     std::string to_string(int flotante );
-    ui->Entrada->setText();
+    ui->salida->clear();
+    ui->salida->setText("a");
+
+    ui->salida->update();
+
 
 
 
