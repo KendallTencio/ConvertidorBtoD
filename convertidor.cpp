@@ -53,7 +53,7 @@ std::string Convertidor::getBinCompleto()
 
     for(int i=0;i<enteros.getTam();i++)
         lista += std::to_string(this->enteros.getPos(i)->getElemento());
-    lista+=",";
+    lista+=".";
     for(int i=0;i<decimales.getTam();i++)
         lista += std::to_string(this->decimales.getPos(i)->getElemento());
 
