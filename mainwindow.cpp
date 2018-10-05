@@ -18,24 +18,34 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    if(this->BiADec==true){
+    Convertidor convert;
+    QString valor=ui->Entrada->text();
+    QString limiteStr=ui->limite->text();
+    QString resultado;
+    if(this->DecABi==true)
+    {
         double flotante;
         int limite;
-        QString valor=ui->Entrada->text();
-        QString limiteStr=ui->limite->text();
         flotante = valor.toDouble();
         limite = limiteStr.toInt();
         long enteros = (long)flotante;
         long double decimales = flotante - enteros;
 
-        Convertidor convert;
         convert.decimalTobinarioEnteros(enteros);
         convert.decimalTobinarioDecimales(decimales, limite);
 
-        QString resul = QString::fromStdString(convert.getBinCompleto());
-        ui->Resultado->setPlainText(resul);
+        resultado = QString::fromStdString(convert.getBinCompleto());
+        ui->Resultado->setPlainText(resultado);
+    }
+    if(this->BiADec==true)
+    {
+
     }
 
+    else
+    {
+        //Mensaje error
+    }
 
 }
 

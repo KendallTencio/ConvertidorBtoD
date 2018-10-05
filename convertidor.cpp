@@ -57,7 +57,6 @@ std::string Convertidor::getBinCompleto()
     for(int i=0;i<decimales.getTam();i++)
         lista += std::to_string(this->decimales.getPos(i)->getElemento());
 
-    std::cout <<lista <<endl;
     return lista;
 }
 ListaEnlazada<int>* Convertidor::getListaDecimales(){
