@@ -20,8 +20,6 @@ private slots:
 
     void on_Salida_textChanged(const QString &arg1);
 
-    void on_radioButton_clicked(bool checked);
-
     void on_DtoB_clicked(bool checked);
 
     void on_BtoD_clicked(bool checked);
