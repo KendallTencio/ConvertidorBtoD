@@ -18,12 +18,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+<<<<<<< HEAD
     Convertidor convert;
     QString valor=ui->Entrada->text();
     QString limiteStr=ui->limite->text();
     QString resultado;
     if(this->DecABi==true)
     {
+=======
+    if(this->DecABi==true){
+>>>>>>> b8bb03c20fc4731facbce081f0d35a14f30a9ce3
         double flotante;
         int limite;
         flotante = valor.toDouble();
