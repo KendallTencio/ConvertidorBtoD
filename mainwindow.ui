@@ -128,31 +128,31 @@
      <enum>Qt::DefaultContextMenu</enum>
     </property>
    </widget>
-   <widget class="QRadioButton" name="DtoB">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>200</y>
-      <width>101</width>
-      <height>18</height>
+      <width>105</width>
+      <height>42</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Decimal a Binario</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="BtoD">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>230</y>
-      <width>111</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Binario a Decimal</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QRadioButton" name="DtoB">
+       <property name="text">
+        <string>Decimal a Binario</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QRadioButton" name="BtoD">
+       <property name="text">
+        <string>Binario a Decimal</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -161,7 +161,7 @@
      <x>0</x>
      <y>0</y>
      <width>507</width>
-     <height>18</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
