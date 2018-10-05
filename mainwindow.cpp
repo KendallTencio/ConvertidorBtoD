@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    if(this->BiADec==true){
+    if(this->DecABi==true){
         double flotante;
         int limite;
         QString valor=ui->Entrada->text();
