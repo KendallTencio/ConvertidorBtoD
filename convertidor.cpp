@@ -19,7 +19,6 @@ void Convertidor::decimalTobinarioEnteros(long numero){
         else
         {
             this->enteros.insertarCabeza(1);
-
         }
         numero=numero/2;
         c++;
@@ -28,7 +27,6 @@ void Convertidor::decimalTobinarioEnteros(long numero){
 }
 
 void Convertidor::cargarListas(string valor){
-
     bool banderaComa=false;
     for (int indice=0; valor.length()>indice;indice++){
         char numerochar= valor[indice];
@@ -49,7 +47,6 @@ void Convertidor::decimalTobinarioDecimales(double numeroFlotante, int nLimite){
         this->decimales.insertarFinal((int)(numeroFlotante*2));
         numeroFlotante = (numeroFlotante*2) - (int)(numeroFlotante*2);
         nLimite--;
-        std::cout <<numeroFlotante <<std::endl;
     }
 
 }

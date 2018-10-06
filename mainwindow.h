@@ -25,7 +25,7 @@ private slots:
     void on_DtoB_clicked(bool checked);
 
     void on_BtoD_clicked(bool checked);
-
+    int cantdigitos(std::string numero);
 
 
 private:

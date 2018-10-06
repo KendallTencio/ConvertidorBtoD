@@ -29,10 +29,16 @@ void MainWindow::on_pushButton_clicked()
     long enteros = (long)flotante;
     long double decimales = flotante - enteros;
     if(this->DecABi){
-        convert.decimalTobinarioEnteros(enteros);
-        convert.decimalTobinarioDecimales(decimales, limite);
 
-        resultado = QString::fromStdString(convert.getBinCompleto());
+        if(this->cantdigitos(valor.toStdString()+".")<=10){
+            convert.decimalTobinarioEnteros(enteros);
+            convert.decimalTobinarioDecimales(decimales, limite);
+
+            resultado = QString::fromStdString(convert.getBinCompleto());
+        }else{
+             resultado = QString::fromStdString("OverFlow Entero");
+        }
+
 
     }else if(this->BiADec){
         string numeroBiADec = valor.toStdString();
@@ -55,6 +61,13 @@ bool MainWindow::esBinario(string numero){
             return false;
     return true;
 }
+
+int MainWindow::cantdigitos(string numero){
+    int indice=0;
+    for(;numero[indice]!='.';)indice++;
+    return indice;
+}
+
 void MainWindow::on_DtoB_clicked(bool checked)
 {
     if(checked)
@@ -63,7 +76,6 @@ void MainWindow::on_DtoB_clicked(bool checked)
     BiADec = false;
     }
 }
-
 void MainWindow::on_BtoD_clicked(bool checked)
 {
     if(checked)
