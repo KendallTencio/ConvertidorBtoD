@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "convertidor.h"
+#include <iostream>
+#include <string>
 namespace Ui {
 class MainWindow;
 }
@@ -24,11 +26,14 @@ private slots:
 
     void on_BtoD_clicked(bool checked);
 
+
+
 private:
     Convertidor conv;
     Ui::MainWindow *ui;
     bool DecABi = false;
     bool BiADec = false;
+    bool esBinario(std::string numero);
 };
 
 #endif // MAINWINDOW_H

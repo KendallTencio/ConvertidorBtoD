@@ -47,8 +47,8 @@ void ListaEnlazada<G>::insertarFinal(G Dato)
 template<typename G>
 int ListaEnlazada<G>::isVacia(){
     if(cabeza)
-        return 1;
-    return 0;
+        return 0;
+    return 1;
 }
 template<typename G>
 void ListaEnlazada<G>::insertarPos(G dato,int pos)

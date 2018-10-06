@@ -11,15 +11,17 @@ private:
     ListaEnlazada<int> enteros;
     ListaEnlazada<int> decimales;
 
-public:
-public:
-    std::string getBinCompleto();
-    void decimalTobinarioDecimales(double, int);
-    void decimalTobinario();
-    Convertidor();
 
-    void decimalTobinarioEnteros(long);
-    long binarioToDecimal(ListaEnlazada<int>*);
+public:
+    Convertidor();
+    void decimalTobinarioEnteros(long numero);
+    std::string binarioToDecimal(std::string valor);
+    void decimalTobinarioDecimales(double numeroFlotante, int nLimite);
+    std::string getBinCompleto();
+    double getDecimalCompleto();
+    double binarioToDecimalDecimales(ListaEnlazada<int> listaEnlazadaEntrante);
+    double binarioToDecimal(ListaEnlazada<int> lista);
+    void cargarListas(std::string valor);
     ListaEnlazada<int>* getListaEnteros();
     ListaEnlazada<int>* getListaDecimales();
 };

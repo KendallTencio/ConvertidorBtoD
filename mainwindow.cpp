@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <iostream>
-#include <string>
+
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -18,41 +17,44 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-<<<<<<< HEAD
+
     Convertidor convert;
     QString valor=ui->Entrada->text();
     QString limiteStr=ui->limite->text();
     QString resultado;
-    if(this->DecABi==true)
-    {
-=======
-    if(this->DecABi==true){
->>>>>>> b8bb03c20fc4731facbce081f0d35a14f30a9ce3
-        double flotante;
-        int limite;
-        flotante = valor.toDouble();
-        limite = limiteStr.toInt();
-        long enteros = (long)flotante;
-        long double decimales = flotante - enteros;
-
+    double flotante;
+    int limite;
+    flotante = valor.toDouble();
+    limite = limiteStr.toInt();
+    long enteros = (long)flotante;
+    long double decimales = flotante - enteros;
+    if(this->DecABi){
         convert.decimalTobinarioEnteros(enteros);
         convert.decimalTobinarioDecimales(decimales, limite);
 
         resultado = QString::fromStdString(convert.getBinCompleto());
-        ui->Resultado->setPlainText(resultado);
-    }
-    if(this->BiADec==true)
-    {
 
-    }
+    }else if(this->BiADec){
+        string numeroBiADec = valor.toStdString();
+        if(esBinario(numeroBiADec)){
+            convert.cargarListas(numeroBiADec);
+            resultado = QString::fromStdString(std::to_string(convert.getDecimalCompleto()));
+        }
+        else
+            resultado = QString::fromStdString("Error de Base");
 
-    else
-    {
-        //Mensaje error
+    }else{
+         resultado = QString::fromStdString("Seleccione una opcion");
     }
-
+    ui->Resultado->setPlainText(resultado);
 }
 
+bool MainWindow::esBinario(string numero){
+    for(int indice=0;numero[indice]!='\0';indice++)
+        if (numero[indice]!='0' && numero[indice]!='1' &&  numero[indice]!='.')
+            return false;
+    return true;
+}
 void MainWindow::on_DtoB_clicked(bool checked)
 {
     if(checked)
