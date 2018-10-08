@@ -30,7 +30,7 @@ void MainWindow::on_pushButton_clicked()
     long double decimales = flotante - enteros;
     if(this->DecABi){
 
-        if(this->cantdigitos(valor.toStdString()+".")<=10){
+        if(this->cantdigitos(valor.toStdString()+".")<=9){
             convert.decimalTobinarioEnteros(enteros);
             convert.decimalTobinarioDecimales(decimales, limite);
 
