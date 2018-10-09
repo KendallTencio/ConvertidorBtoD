@@ -34,6 +34,7 @@ private:
     bool DecABi = false;
     bool BiADec = false;
     bool esBinario(std::string numero);
+    bool esNumero(std::string numero);
 };
 
 #endif // MAINWINDOW_H
