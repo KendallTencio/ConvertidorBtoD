@@ -28,6 +28,8 @@ private slots:
     int cantdigitos(std::string numero);
 
 
+    void on_DtoB_clicked();
+
 private:
     Convertidor conv;
     Ui::MainWindow *ui;

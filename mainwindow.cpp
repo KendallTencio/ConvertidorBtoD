@@ -98,3 +98,8 @@ void MainWindow::on_BtoD_clicked(bool checked)
     BiADec = true;
     }
 }
+
+void MainWindow::on_DtoB_clicked()
+{
+
+}
